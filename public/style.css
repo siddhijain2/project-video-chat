@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+#video-grid {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+.width-video, video {
+  display: block;
+  flex: 1;
+  object-fit: cover;
+  width: 100%;
+  border: 5px solid rgb(36, 36, 36);
+  max-width: 600px;
+  transform: rotateY(180deg);
+
+}
+.main {
+  height: 100%;
+  display: flex;
+}
+.main_left {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+}
+.main_videos {
+  flex-grow: 1;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main__controls {
+  display: flex;
+  background-color: #1c1e20;
+  color: #d2d2d2;
+  padding: 5px;
+  justify-content: center;
+}
+.main__controls_block {
+  display: flex;
+}
+.main__controls_button {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  margin: 5px;
+}
+.main__controls_button span {
+  font-size: 15px;
+  margin-top: 10px;
+  display: block;
+}
+.main__controls_button:hover {
+  background-color: #34383b;
+}
+.main__controls_button i {
+  font-size: 25px;
+}
+.leaveMeeting {
+  color: #fff;
+}
+.main__header {
+  color: #f5f5f5;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid #3d3d42;
+}
+
+.videoAvatarImage {
+  z-index: 8;
+  position: absolute;
+  /*center*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.statusMenu {
+  z-index: 7;
+  display: block;
+  /*position: absolute;*/
+  padding: 10px;
+  background-color:#3d3d42;
+  font-size: small;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  cursor: default;
+  /* center */
+}
+.statusMenu i,
+.statusMenu p,
+.statusMenu h4 {
+  color: white;
+  display: inline;
+  border: none;
+  margin-right: 10px;
+}
+
+
+
+/*--------------------------------------------------------------
+# Pulse class effect
+--------------------------------------------------------------*/
+
+.pulsate {
+  animation: pulsate 3s ease-out;
+  animation-iteration-count: infinite;
+  -webkit-animation: pulsate 3s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0.5;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes pulsate {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/*--------------------------------------------------------------
+
+# Swal2
+--------------------------------------------------------------*/
+
+.swal2-validation-message,
+.swal2-content,
+.swal2-input {
+  text-align: center;
+  color: white !important;
+  background-color: transparent !important;
+}
+.swal2-title {
+  color: #000;
+}
+.swal2-file {
+  color: white !important;
+  background-color: transparent !important;
+}
+.swal2-html-container {
+  color: rgb(165, 165, 165) !important;
+  background-color: transparent !important;
+}
+
+/* 
+.swal2-popup {
+  font-size: 0.8rem !important;
+}
+*/
+.swal2-select {
+  background-color: black !important;
+  color: white !important;
+  border-radius: 6px !important;
+}
+.main__right {
+  display: flex;
+  flex-direction: column;
+  flex: 0.2;
+  background-color: #292d30;
+}
+
+.main__chat_window {
+  flex-grow: 1;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+.main__chat_window::-webkit-scrollbar {
+  display: none;
+}
+
+.main__message_container {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+}
+
+
+
+.main__message_container > input {
+  height: 50px;
+  flex: 1;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding-left: 20px;
+  margin-right: 15px;
+  border: none;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+}
+
+.message > b {
+  color: #eeeeee;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.message > b > i {
+  margin-right: 0.7rem;
+  font-size: 1rem;
+}
+
+.message > span {
+  background-color: #eeeeee;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 35px;
+}
+#showChat {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .main__right {
+    display: none;
+  }
+  .main__left {
+    width: 100%;
+    flex: 1;
+  }
+
+  video {
+    height: auto;
+    width: 100%;
+  }
+
+  #showChat {
+    display: flex;
+  }
+}
